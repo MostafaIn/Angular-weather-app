@@ -1,0 +1,13 @@
+<mat-selection-list #weatherList [multiple]="false">
+  <div mat-dialog-actions>
+    <div
+      style="border: none"
+      [mat-dialog-close]="weatherList.selectedOptions.selected[0]?.value"
+      cdkFocusInitial
+    >
+      <mat-list-option *ngFor="let item of list.list" [value]="item">
+        {{ item.name }}, {{ item.sys.country }}
+      </mat-list-option>
+    </div>
+  </div>
+</mat-selection-list>

@@ -1,0 +1,34 @@
+<div class="controllers">
+  <mat-form-field class="search-input" appearance="outline">
+    <mat-label>Search for a city</mat-label>
+    <input
+      matInput
+      placeholder="Ex. Helsinki"
+      id="cityName"
+      #cityNameInput
+      (input)="onSearchCity($event)"
+      (keyup.enter)="onSubmitCityName(cityNameInput.value, selectedUnit)"
+    />
+    <mat-icon
+      matSuffix
+      aria-hidden="false"
+      aria-label="search city name icon"
+      (click)="onSubmitCityName(cityNameInput.value, selectedUnit)"
+      >search</mat-icon
+    >
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="units">
+    <mat-label>Units</mat-label>
+    <select
+      matNativeControl
+      [(ngModel)]="selectedUnit"
+      (ngModelChange)="onSubmitUnit(cityNameInput.value, selectedUnit)"
+      name="unit"
+      required
+    >
+      <option *ngFor="let unit of units" [ngValue]="unit.value">
+        {{ unit.viewValue }}
+      </option>
+    </select>
+  </mat-form-field>
+</div>

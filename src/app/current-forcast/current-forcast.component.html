@@ -1,0 +1,66 @@
+<mat-card rol="region" class="weather-card" #weatherCard>
+  <mat-card-header>
+    <div mat-card-avatar class="weather-header-icon">
+      <img
+        src="http://openweathermap.org/img/w/{{
+          weatherData.weather[0].icon
+        }}.png"
+        alt="{{ weatherData.weather[0].desciption }}"
+      />
+    </div>
+    <mat-card-title>{{ weatherData.name }}</mat-card-title>
+    <mat-card-subtitle style="color: #fff">{{
+      weatherData.sys.country
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <h1>
+    {{ weatherData.main.temp | number: "1.0-0"
+    }}{{ weatherData.unit === "metric" ? "&#8451;" : "&#8457;" }}
+  </h1>
+  <h3>{{ weatherData.weather[0].description }}</h3>
+  <div class="temp" *ngIf="!errorMsg">
+    <p>
+      <span
+        ><mat-icon
+          class="min-icon"
+          aria-hidden="false"
+          aria-label="min temprature icon"
+          >arrow_drop_down</mat-icon
+        > </span
+      >{{ weatherData.main.temp_min | number: "1.0-0"
+      }}{{ weatherData.unit === "metric" ? "&#8451;" : "&#8457;" }}
+    </p>
+    <p>
+      <span
+        ><mat-icon
+          class="max-icon"
+          aria-hidden="false"
+          aria-label="max temprature icon"
+          >arrow_drop_up</mat-icon
+        > </span
+      >{{ weatherData.main.temp_max | number: "1.0-0"
+      }}{{ weatherData.unit === "metric" ? "&#8451;" : "&#8457;" }}
+    </p>
+  </div>
+  <mat-card-content class="card-content" *ngIf="!errorMsg">
+    <div class="main-item">
+      <p>
+        {{ weatherData.main.feels_like | number: "1.0-0"
+        }}{{ weatherData.unit === "metric" ? "&#8451;" : "&#8457;" }}
+      </p>
+      <h4>FEELS LIKE</h4>
+    </div>
+    <div class="main-item">
+      <p>{{ weatherData.main.humidity }}%</p>
+      <h4>HUMIDITY</h4>
+    </div>
+    <div class="main-item">
+      <p>
+        {{ weatherData.wind.speed | number: "1.0-0" }}
+        {{ weatherData.unit === "metric" ? "kmh" : "mph" }}
+      </p>
+      <h4>WIND SPEED</h4>
+    </div>
+    <!-- <p>{{ weatherData.unit }}</p> -->
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,49 @@
+.mat-card {
+  width: 100%;
+  min-height: 350px;
+  background-image: linear-gradient(#0e1e52, #7de9f4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-content {
+  min-width: 100%;
+  display: flex;
+  // flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-item {
+  min-width: 8em;
+  max-width: 8em;
+  background-image: linear-gradient(#7de9f4, #ffdd9a);
+  text-align: center;
+  color: #444;
+  padding: 12px 5px 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.temp {
+  min-width: 25%;
+  max-width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.temp > p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.max-icon {
+  color: #ce1e1e;
+}
+.min-icon {
+  color: #37f237;
+}
