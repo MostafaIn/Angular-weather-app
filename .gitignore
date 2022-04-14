@@ -41,6 +41,12 @@ testem.log
 .DS_Store
 Thumbs.db
 
+<<<<<<< HEAD
 
 # Environments
 src/environments
+=======
+# environments
+.src/environments/
+
+>>>>>>> 64e17499b1fc1617b84c2b14a88bc773b64ba7e7
